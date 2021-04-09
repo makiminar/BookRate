@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="utf-8">
+  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+
+    <style type="text/css">
+
+      body {
+          background-image: url("https://wallpapercave.com/wp/wp7854626.jpg");
+      }
+
+      h2 {
+        color: aliceblue;
+        text-align: center;
+        font-size: xx-large;
+      }
+
+      button {
+        align-self: center;
+        text-align: center;
+        font-size: xx-large;
+      }
+
+      form {
+        padding-left: 600px;
+        color: aliceblue;
+        font-size: large;
+      }
+    </style>
+
 </head>
 <body>
-$END$
+  <main>
+   <h2>Sign up</h2>
+    <form method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+    </form>
+  </main>
 </body>
 </html>
