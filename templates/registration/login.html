@@ -1,12 +1,99 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}BookRate Login{% endblock %}</title>
 
-{% block title %}Login{% endblock %}
+    <style type="text/css">
+
+      body {
+          background-image: url("https://wallpapercave.com/wp/wp7854626.jpg");
+      }
+
+      .header {
+        text-align: center;
+      }
+
+      .header h1 {
+        text-align: center;
+        color: aliceblue;
+        font-size: 70px;
+        margin-top: 50px;
+      }
+
+      .header button {
+        text-align: center;
+        font-size: xx-large;
+        padding-right: 95px;
+      }
+
+      .header form {
+        color: aliceblue;
+        text-align: right;
+        font-size: large;
+        margin-right: 50px;
+      }
+
+      .main {
+          flex: 70%;
+          padding: 20px;
+      }
+
+      .main h1 {
+          color: aliceblue;
+          text-align: center;
+      }
+
+
+      .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+        width: border-box;
+        align-items: center;
+     }
+
+      .column {
+      flex: 50%;
+      padding: 0 4px;
+      }
+
+      .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 300px;
+        height: 450px;
+      }
+
+    </style>
+
+</head>
+<body>
+
+      <div class="header">
+        <h1>BOOK RATE
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Login</button>
+        </form>
+        </h1>
+      </div>
+
+      <div class="main">
+        <h1>Discover the most popular titles</h1>
+        <div class="row">
+          <div class="column">
+            <img src="https://mrtns.eu/tovar/_l/122/l122976.jpg?v=1593606185" style="margin-right:150px">
+            <img src="https://mrtns.eu/tovar/_l/598/l598573.jpg?v=1555584876" style="margin-right:150px">
+            <img src="https://mrtns.eu/tovar/_l/770/l770169.jpg?v=1595490263" style="margin-right:150px">
+            <img src="https://mrtns.eu/tovar/_l/296/l296829.jpg?v=1575050141" style="margin-right:0px">
+          </div>
+        </div>
+      </div>
+</body>
+</html>
 
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
+
 {% endblock %}
