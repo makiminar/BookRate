@@ -16,9 +16,8 @@ class Book(models.Model):
 class Rating(models.Model):
     rating_choices = (
         ('L', 'Liked'),
-        ('D', 'Disliked'),
-        ('N', 'No opinion')
+        ('D', 'Disliked')
     )
-    user_id = models.IntegerField(unique=True)
-    book_id = models.IntegerField(unique=True)
     rating = models.CharField(max_length=1, choices=rating_choices)
+    user = models.ForeignKey('User', on_delete=models.CASCADE, null=True)
+    book = models.ForeignKey('Book', on_delete=models.CASCADE, null=True)
