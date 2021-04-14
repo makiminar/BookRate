@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+{% extends 'base.html' %}
 
-    <style type="text/css">
+{% block head %}
 
-      body {
-          background-image: url("https://wallpapercave.com/wp/wp7854626.jpg");
-      }
+<style type="text/css">
 
       h2 {
-        color: aliceblue;
         text-align: center;
         font-size: xx-large;
       }
@@ -24,20 +17,21 @@
 
       form {
         padding-left: 600px;
-        color: aliceblue;
+        color: black;
         font-size: large;
       }
-    </style>
+</style>
 
-</head>
-<body>
-  <main>
+{% endblock %}
+
+
+{% block body %}
+
    <h2>Sign up</h2>
     <form method="post">
      {% csrf_token %}
      {{ form.as_p }}
     <button type="submit">Sign Up</button>
     </form>
-  </main>
-</body>
-</html>
+
+{% endblock %}
