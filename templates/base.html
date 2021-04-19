@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <title>BookRate</title>
+  <style type="text/css">
+      .authForm {
+          margin: auto;
+          border: 100px lightblue;
+          font-size: 90px;
+          padding-right: 0px;
+          text-allign: center;
+          background-color: aqua;
+      }
 
-        {% block head %}
-        <title>Base</title>
-        {% endblock %}
+      h1 {
+          text-align: center;
+          color: black;
+          font-size: 70px;
+          margin: 0px;
+          padding: 0px;
+      }
 
-    </head>
-    <body>
-          <br>
-           <div class="container">
-            <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">BookRate</a>
-              </div>
-              <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="accounts/signup">Register</a></li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
+      button {
+          text-align: center;
+          padding-right: 95px;
+      }
 
-        {% block body %}
+      form {
+          color: black;
+          text-align: right;
+          font-size: large;
+          margin: 0px;
+          padding: 0px;
+      }
 
-        {% endblock %}
-    </body>
+      img {
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 300px;
+          height: 450px;
+      }
+
+      p {
+          color: black;
+          text-align: right;
+          padding-right: 30px;
+      }
+
+  </style>
+  {% block head %}
+  {% endblock %}
+
+</head>
+<body>
+<h1>BOOK RATE</h1>
+{% block body %}
+{% endblock %}
+
+<h1>Discover the most popular titles</h1>
+<img src="https://mrtns.eu/tovar/_l/122/l122976.jpg?v=1593606185" style="margin-right:10%">
+<img src="https://mrtns.eu/tovar/_l/598/l598573.jpg?v=1555584876" style="margin-right:10%">
+<img src="https://mrtns.eu/tovar/_l/770/l770169.jpg?v=1595490263" style="margin-right:10%">
+<img src="https://mrtns.eu/tovar/_l/296/l296829.jpg?v=1575050141" style="margin-right:5%">
+
+
+</body>
 </html>

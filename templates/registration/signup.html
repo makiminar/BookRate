@@ -1,37 +1,11 @@
 {% extends 'base.html' %}
 
-{% block head %}
-
-<style type="text/css">
-
-      h2 {
-        text-align: center;
-        font-size: xx-large;
-      }
-
-      button {
-        align-self: center;
-        text-align: center;
-        font-size: xx-large;
-      }
-
-      form {
-        padding-left: 600px;
-        color: black;
-        font-size: large;
-      }
-</style>
-
-{% endblock %}
-
-
 {% block body %}
-
-   <h2>Sign up</h2>
+  <div class="authForm">
     <form method="post">
-     {% csrf_token %}
-     {{ form.as_p }}
-    <button type="submit">Sign Up</button>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Sign Up</button>
     </form>
-
+  </div>
 {% endblock %}
