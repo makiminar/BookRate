@@ -1,21 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
-
-    <style type="text/css">
-      body{
-          background-image: url("https://wallpapercave.com/wp/wp7854626.jpg");
-
+  <title>BookRate</title>
+  <style type="text/css">
+      .authForm {
+          margin: auto;
+          border: 100px lightblue;
+          font-size: 90px;
+          padding-right: 0px;
+          text-allign: center;
+          background-color: aqua;
       }
-    </style>
+
+      h1 {
+          text-align: center;
+          color: black;
+          font-size: 70px;
+          margin: 0px;
+          padding: 0px;
+      }
+
+      button {
+          text-align: center;
+          padding-right: 95px;
+      }
+
+      form {
+          color: black;
+          text-align: right;
+          font-size: large;
+          margin: 0px;
+          padding: 0px;
+      }
+
+      img {
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 300px;
+          height: 450px;
+      }
+
+      p {
+          color: black;
+          text-align: right;
+          padding-right: 30px;
+      }
+
+  </style>
+  {% block head %}
+  {% endblock %}
 
 </head>
 <body>
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
+<h1>BOOK RATE</h1>
+{% block body %}
+{% endblock %}
+
+<h1>Discover the most popular titles</h1>
+<img src="https://mrtns.eu/tovar/_l/122/l122976.jpg?v=1593606185" style="margin-right:10%">
+<img src="https://mrtns.eu/tovar/_l/598/l598573.jpg?v=1555584876" style="margin-right:10%">
+<img src="https://mrtns.eu/tovar/_l/770/l770169.jpg?v=1595490263" style="margin-right:10%">
+<img src="https://mrtns.eu/tovar/_l/296/l296829.jpg?v=1575050141" style="margin-right:5%">
+
+
 </body>
 </html>

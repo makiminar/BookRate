@@ -1,49 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-    <style type="text/css">
+{% extends 'base.html' %}
 
-      body {
-          background-image: url("https://wallpapercave.com/wp/wp7854626.jpg");
-          /*background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;*/
-      }
 
-      header {
-          padding: 40px;
-      }
+{% block body %}
 
-      h1 {
-        text-align: center;
-        color: aliceblue;
-        font-size: 70px;
-      }
+{% if user.is_authenticated %}
+  <p>You are logged in as {{ user.username }} </p>
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+  <p>Click<a href="{% url 'prefer' %}">here</a> to view recommendations</p>
+  <p>Click<a href="{% url 'recommend' %}">here</a> to view recommendations</p>
+{% else %}
+  <p>You are not logged in</p>
+  <p>Click here to <a href="{% url 'login' %}">Log In</a></p>
+  <p>Click here to <a href="{% url 'signup' %}">Sign up</a></p>
+{% endif %}
 
-      p {
-        color: aliceblue;
-        text-align: right;
-        font-size: x-large;
-        padding-right: 30px;
-      }
-
-    </style>
-
-</head>
-<body>
-
-    <header>
-      <h1>BOOK RATE</h1>
-
-      {% if user.is_authenticated %}
-        <p>You are logged in as {{ user.username }} </p>
-        <p ><a href="{% url 'logout' %}">Log Out</a></p>
-      {% else %}
-        <p >You are not logged in</p>
-        <p><a href="{% url 'login' %}">Log In</a></p>>
-      {% endif %}
-    </header>
-</body>
-</html>
-
+{% endblock %}
