@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+
+  <style>
+     h {
+       text-align: center;
+       font-size: xx-large;
+     }
+
+  </style>
 </head>
 <body>
-{% if bookList %}
-  <ul>
-  {% for book in bookList %}
-    <li>{{ book.title }}</li>
-  {% endfor %}
-{% else %}
-  <p>No polls are available.</p>
-{% endif %}
-</ul>
+  {% if recommended_books %}
+    <ul>
+      <h>Tips for you</h>
+      <br>
+      {% for book in recommended_books %}
+       <li>{{ book.title }}</li>
+      {% endfor %}
+
+  {% else %}
+      <p>No books are available for you yet - try to rate at least 20 books.</p>
+  {% endif %}
+  </ul>
 </body>
 </html>
 

@@ -2,12 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Preferences</title>
+    <style type="text/css">
+      .split {
+        height: 100%;
+        width: 50%;
+        position: fixed;
+        padding-top: 50px;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        right: 0;
+      }
+
+      .centered {
+        text-align: center;
+      }
+
+      form {
+        text-align: center;
+      }
+
+    </style>
 </head>
 <body>
+
+<h1 style="text-align: center">Select books you liked or disliked</h1>
+
+  <div class="split left">
+    <div class="centered">
+      <ul>
+        {% for book in books_part_one %}
+      <ul style="font-size: xx-large">{{ book.title }}, {{ book.author }}</ul>
+        <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+        </form><br>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="split right">
+    <div class="centered">
+      <ul>
+        {% for book in books_part_two %}
+        <ul style="font-size: xx-large">{{ book.title }}, {{ book.author }}</ul>
+        <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+        </form>
+        <br>
+
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+
 
 </body>
 </html>
 
 
-<!--TODO udelat forms, ktera bude prebirat z databaze knihu a jeji nazev nasledne do sloupecku vyprintit a ke kazdymu lsoupecku priradit button, ktereej posle form post request do databaze a prida rating danymu userovi>
+<!--TODO udelat forms, ktera bude prebirat z databaze knihu a jeji nazev nasledne do sloupecku vyprintit a ke kazdymu sloupecku priradit button, ktereej posle form post request do databaze a prida rating danymu userovi>
