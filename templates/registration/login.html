@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block body %}
+
   <div class="authForm">
-    <form method="post">
+    <form method="post" class="myForm">
       {% csrf_token %}
       {{ form.as_p }}
-      <button type="submit">Login</button>
+      <br>
+      <button type="submit" class="button">Login</button>
     </form>
   </div>
 {% endblock %}

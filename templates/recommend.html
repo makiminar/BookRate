@@ -5,26 +5,48 @@
   <title>Title</title>
 
   <style>
-     h {
-       text-align: center;
-       font-size: xx-large;
-     }
+
+      .centered {
+          text-align: center;
+          padding-top: 100px;
+      }
+
+      .button {
+            background-color: forestgreen; /* Green */
+            size: 30px;
+            border: black;
+            padding: 15px 32px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+      }
 
   </style>
 </head>
 <body>
+
+<div class="centered">
   {% if recommended_books %}
     <ul>
-      <h>Tips for you</h>
-      <br>
+      <ul style="font-size:xxx-large;font-family: 'DejaVu Sans';font-weight: bold">Tips for you:</ul>
+      <br><br>
       {% for book in recommended_books %}
-       <li>{{ book.title }}</li>
+       <ul style="font-size: x-large;font-family: 'DejaVu Sans'">{{ book.title }}</ul>
+        <ul style="font-size: large;">by {{ book.author }}</ul><br>
       {% endfor %}
 
-  {% else %}
-      <p>No books are available for you yet - try to rate at least 20 books.</p>
-  {% endif %}
-  </ul>
+   {% else %}
+       <p style="font-size: x-large">No books are available for you yet</p>
+   {% endif %}
+
+        <br><br>
+      <form method="post" action="{% url 'recommend_post' %}" style="padding-left: 30px">
+        {% csrf_token %}
+        <button type="submit" class="button">Update</button>
+      </form>
+   </ul>
+
+ </div>
 </body>
 </html>
 

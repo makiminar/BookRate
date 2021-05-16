@@ -4,14 +4,14 @@
 {% block body %}
 
 {% if user.is_authenticated %}
-  <p>You are logged in as {{ user.username }} </p>
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-  <p>Click <a href="{% url 'prefer' %}">here</a> to edit preferences</p>
-  <p>Click <a href="{% url 'recommend' %}">here</a> to view recommendations</p>
+  <p style="font-size: x-large;padding-top: 25px">You are logged in as *{{ user.username }}* </p>
+  <p style="font-size: large">Click <a href="{% url 'prefer' %}">here</a> to edit preferences</p>
+  <p style="font-size: large">Click <a href="{% url 'recommend' %}">here</a> to view recommendations</p>
+  <p style="font-size: x-large"><a href="{% url 'logout' %}">Log Out</a></p>
 {% else %}
-  <p>You are not logged in</p>
-  <p>Click here to <a href="{% url 'login' %}">Log In</a></p>
-  <p>Click here to <a href="{% url 'signup' %}">Sign up</a></p>
+  <p style="font-size: x-large;padding-top: 25px">You are not logged in</p>
+  <p><a href="{% url 'login' %}">LOGIN</a></p>
+  <p><a href="{% url 'signup' %}">SIGN UP</a></p>
 {% endif %}
 
 {% endblock %}
