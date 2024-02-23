@@ -1,0 +1,41 @@
+# Django
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+
+# virtual environment
+venv/
+env/
+
+# local development settings
+*.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+logs/
+
+# Compiled C extensions
+*.so
+
+# Python cache
+__pycache__/
+
+# Environment variables
+.env
+
+# Django migrations
+*/migrations/
+
+# Ignore the local settings file
+local_settings.py
+
+# Ignore the development database
+development.db
+
+# Ignore secret key information
+secret_key.txt

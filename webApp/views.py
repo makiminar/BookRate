@@ -32,7 +32,7 @@ def recommend(request):
 
 
 def prefer(request):
-    books_part_one = Book.objects.all().order_by('id')[:40]
+    books_part_one = Book.objects.all().order_by('id')[:10]
     books_part_two = Book.objects.all().filter(pk__in=[11, 12, 13, 14, 15, 16, 17, 18, 19, 20]).order_by('id')
     context = {'books_part_one': books_part_one, 'books_part_two': books_part_two}
     return render(request, 'prefer.html', context)
